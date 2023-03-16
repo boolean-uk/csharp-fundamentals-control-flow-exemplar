@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace csharp_fundamentals_control_flow.Main
+namespace csharp_fundamentals_control_flow_exemplar.Main
 {
     public class Extension
     {
+        
 
 
         /* 
@@ -18,7 +19,18 @@ namespace csharp_fundamentals_control_flow.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
         */
-
+        public string timerStatus(int remaining)
+        {
+            if (remaining < 0)
+            {
+                return "The timer finished ages ago!";
+            }
+            if (remaining == 0)
+            {
+                return "The cake is ready!";
+            }
+            return "The cake is still baking!";
+        }
 
 
 
@@ -29,7 +41,18 @@ namespace csharp_fundamentals_control_flow.Main
             provided and the prep time per ingredient.
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
-
+        public double estimatePrepTime(string[] ingredients, int prepTime)
+        {
+            double total = 0;
+            if(prepTime==0)
+            {
+                prepTime = 2;
+            }
+            ingredients.ToList<string>().ForEach(x => { 
+                total += prepTime;
+            });
+            return total;
+        }
 
 
 
@@ -39,6 +62,15 @@ namespace csharp_fundamentals_control_flow.Main
             The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.
             The method should return the number of grams of sugar needed to make the cake.
          */
+        public double calculateGramsOfSugar(string[] ingredients, int layerCount)
+        {
+            if(ingredients.Length==3 && ingredients.Contains("sugar"))
+            {
+                return layerCount * 100;
+            }
+            return 0;
+        }
+
 
     }
 }
