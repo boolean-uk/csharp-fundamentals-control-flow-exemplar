@@ -1,15 +1,16 @@
-﻿using csharp_fundamentals_control_flow.Main;
+﻿
+using csharp_fundamentals_control_flow_exemplar.Main;
 using NUnit.Framework;
 
 namespace csharp_fundamentals_control_flow.Test
 {
-    public class ExerciseTest
+    public class CoreTests
     {
-        Exercise exercise;
+        Core exercise;
 
-        public ExerciseTest()
+        public CoreTests()
         {
-            this.exercise = new Exercise();
+            this.exercise = new Core();
         }
 
         [Test]
@@ -62,7 +63,7 @@ namespace csharp_fundamentals_control_flow.Test
         {
             Assert.AreEqual("Correct!", this.exercise.eight(8, 8));
             Assert.AreEqual("Correct!", this.exercise.eight(10, 8));
-            Assert.AreEqual("Wrong!", this.exercise.eight(8, 6));
+            Assert.AreEqual("Wrong!", this.exercise.eight(6, 8));
         }
 
         [Test]

@@ -1,4 +1,5 @@
-﻿using csharp_fundamentals_control_flow.Main;
+﻿
+using csharp_fundamentals_control_flow_exemplar.Main;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace csharp_fundamentals_control_flow.Test
 {
-    public class ExtensionTest
+    public class ExtensionTests
     {
         Extension extension;
 
-        public ExtensionTest()
+        public ExtensionTests()
         {
             this.extension = new Extension();
         }
